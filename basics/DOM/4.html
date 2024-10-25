@@ -1,0 +1,45 @@
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM last part</title>
+ </head>
+ <body style="background-color: #212121; color: #fff;">
+    <ul class="language">
+        <li>Javascript</li>
+
+    </ul>
+    
+ </body>
+ <script>
+    function addlanguage(langName) {
+        const li = document.createElement('li');
+        li.innerHTML = `${langName}`
+        document.querySelector('.language').appendChild(li)
+    }
+    addlanguage("python")
+    addlanguage("C++")
+
+    function addopti(langName){
+        const li = document.createElement('li');
+        li.appendChild(document.createTextNode(langName))
+        document.querySelector('.language').appendChild(li)
+    }
+
+    addopti("CSS")
+
+    //edit
+    const sec = document.querySelector("li:nth-child(2)")
+    const newt = document.createElement('li')
+    newt.textContent = "Mojo"
+    sec.replaceWith(newt)
+
+    const seco = document.querySelector("li:first-child")
+    seco.outerHTML = '<li>Typescript</li>'
+
+    // remove
+    const lastlang = document.querySelector('li:last-child')
+    lastlang.remove()
+ </script>
+ </html>
